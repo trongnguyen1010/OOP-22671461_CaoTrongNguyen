@@ -1,4 +1,4 @@
-package tuan3;
+package tuan3.baiCD;
 
 import java.util.Scanner;
 

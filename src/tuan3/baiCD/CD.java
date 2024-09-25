@@ -1,4 +1,4 @@
-package tuan3;
+package tuan3.baiCD;
 
 public class CD {
     private int maCD;              

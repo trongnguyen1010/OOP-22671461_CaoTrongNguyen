@@ -1,4 +1,4 @@
-package tuan3;
+package tuan3.baiHangThucPham;
 
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;

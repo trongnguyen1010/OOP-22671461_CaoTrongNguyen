@@ -1,4 +1,4 @@
-package tuan3;
+package tuan3.baiPhanSo;
 
 public class MainPhanSo {
 	public static void main(String[] args) {

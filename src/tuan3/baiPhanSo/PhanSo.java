@@ -1,4 +1,4 @@
-package tuan3;
+package tuan3.baiPhanSo;
 
 public class PhanSo {
 	private int numerator;   // Tử số

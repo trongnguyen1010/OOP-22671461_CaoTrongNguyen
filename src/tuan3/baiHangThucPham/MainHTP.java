@@ -1,4 +1,4 @@
-package tuan3;
+package tuan3.baiHangThucPham;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
