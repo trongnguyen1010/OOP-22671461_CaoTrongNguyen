@@ -1,4 +1,4 @@
-package tuan3;
+package tuan3.baiSinhVien;
 
 import java.util.Arrays;
 import java.util.Scanner;

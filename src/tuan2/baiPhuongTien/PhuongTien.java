@@ -1,4 +1,4 @@
-package tuan2;
+package tuan2.baiPhuongTien;
 
 class PhuongTien {
 

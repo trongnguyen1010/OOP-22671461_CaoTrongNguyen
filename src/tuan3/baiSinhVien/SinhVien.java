@@ -1,6 +1,6 @@
 
 													//Cao Trọng Nguyễn - MSSV:22671461
-package tuan3;
+package tuan3.baiSinhVien;
 
 public class SinhVien {
     private int maSinhVien;

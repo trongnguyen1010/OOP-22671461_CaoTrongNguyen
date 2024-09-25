@@ -1,4 +1,4 @@
-package tuan1;
+package tuan1.baiHCN;
 
 public class HCN {
 	private double chieuDai;
@@ -28,7 +28,7 @@ public class HCN {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "Hình chữ nhật có chiều dài = " + getChieuDai() + ", chiều rộng = " + getChieuRong() + ",\n Diện tích = "
+		return "Hình chữ nhật có chi�?u dài = " + getChieuDai() + ", chi�?u rộng = " + getChieuRong() + ",\n Diện tích = "
 				+ tinhDienTich() + ", Chu Vi = " + tinhChuVi();
 	}	
 }

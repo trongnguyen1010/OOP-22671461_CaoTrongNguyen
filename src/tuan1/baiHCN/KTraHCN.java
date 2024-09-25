@@ -1,4 +1,4 @@
-package tuan1;
+package tuan1.baiHCN;
 
 import java.util.Scanner;
 
@@ -8,11 +8,11 @@ public class KTraHCN {
 		
 		HCN hcn = new HCN();
 		
-		System.out.println("Nhập chiều dài hcn : ");
+		System.out.println("Nhập chi�?u dài hcn : ");
 		double chieuDai = sc.nextDouble();
 		hcn.setChieuDai(chieuDai);
 		
-		System.out.println("Nhập chiều rộng hcn : ");
+		System.out.println("Nhập chi�?u rộng hcn : ");
 		double chieuRong = sc.nextDouble();
 		hcn.setChieuRong(chieuRong);
 		
