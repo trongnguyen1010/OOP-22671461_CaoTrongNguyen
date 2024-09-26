@@ -1,6 +1,6 @@
-package tuan4_quanlysach;
+package tuan4.quanlysach;
 
-public class Main {
+public class KiemThu {
     public static void main(String[] args) {
         ListSach thuVien = new ListSach();
 

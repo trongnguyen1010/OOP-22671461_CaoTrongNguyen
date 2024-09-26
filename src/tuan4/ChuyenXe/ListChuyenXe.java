@@ -1,4 +1,4 @@
-package tuan4_ChuyenXe;
+package tuan4.ChuyenXe;
 
 public class ListChuyenXe {
 	private ChuyenXe[] CX = new ChuyenXe[100];

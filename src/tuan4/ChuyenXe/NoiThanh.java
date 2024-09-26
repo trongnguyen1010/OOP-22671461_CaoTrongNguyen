@@ -1,4 +1,4 @@
-package tuan4_ChuyenXe;
+package tuan4.ChuyenXe;
 
 import java.util.Scanner;
 

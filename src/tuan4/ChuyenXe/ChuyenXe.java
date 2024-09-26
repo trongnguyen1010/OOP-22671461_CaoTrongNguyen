@@ -1,7 +1,7 @@
 
 //Cao Trong Nguyễn - 22671461
 
-package tuan4_ChuyenXe;
+package tuan4.ChuyenXe;
 
 import java.util.Scanner;
 

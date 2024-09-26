@@ -1,4 +1,4 @@
-package tuan4_quanlysach;
+package tuan4.quanlysach;
 
 public class Sach {
     protected String maSach;
