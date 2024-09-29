@@ -1,17 +1,34 @@
 package tuan4.quanlysach;
 
 public class SachThamKhao extends Sach {
-    private double thue;
-
-    public SachThamKhao(String maSach, String ngayNhap, double donGia, int soLuong, String nhaXuatBan, double thue) {
-        super(maSach, ngayNhap, donGia, soLuong, nhaXuatBan);
+    private double thue, thanhTien;
+ 
+    public SachThamKhao() {
+        super();
+    }
+ 
+    public SachThamKhao(double thue) {
+        super();
         this.thue = thue;
     }
-
-    @Override
-    public double tinhThanhTien() {
-        return soLuong * donGia + thue;
+ 
+    public double getThue() {
+        return thue;
     }
-
-    // Getter và Setter nếu cần
+ 
+    public void setThue(double thue) {
+        this.thue = thue;
+    }
+ 
+    public void nhapSach() {
+        super.nhapSach();
+        System.out.print("Nhập thuế: ");
+        thue = scanner.nextDouble();
+    }
+     
+    @Override
+    public String toString() {
+        return super.toString() + ", thuế: " + this.thue;
+    }
+     
 }

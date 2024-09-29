@@ -1,28 +1,79 @@
 package tuan4.quanlysach;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class KiemThu {
+    
     public static void main(String[] args) {
-        ListSach thuVien = new ListSach();
-
-        SachGiaoKhoa sach1 = new SachGiaoKhoa("SGK001", "01/09/2024", 100000, 5, "NXB A", "mới");
-        SachGiaoKhoa sach2 = new SachGiaoKhoa("SGK002", "02/09/2024", 80000, 3, "NXB B", "cũ");
-        SachThamKhao sach3 = new SachThamKhao("STK001", "03/09/2024", 150000, 2, "NXB C", 20000);
-
-        thuVien.nhapSach(sach1);
-        thuVien.nhapSach(sach2);
-        thuVien.nhapSach(sach3);
-
-        System.out.println("Danh sách các sách trong thư viện:");
-        thuVien.xuatDanhSach();
-
-        System.out.println("\nTổng thành tiền của sách giáo khoa: " + thuVien.tinhTongThanhTienSachGiaoKhoa());
-
-        double trungBinhDonGia = thuVien.tinhTrungBinhDonGiaSachThamKhao();
-        System.out.println("Trung bình đơn giá của sách tham khảo: " + trungBinhDonGia);
-
-        String tenNXB = "NXB A";
-        System.out.println("\nCác sách giáo khoa của nhà xuất bản " + tenNXB + ":");
-        thuVien.xuatSachGiaoKhoaCuaNhaXuatBan(tenNXB);
+        ArrayList<SachGiaoKhoa> arrSachGiaoKhoa = new ArrayList<>();
+        ArrayList<SachThamKhao> arrSachThamKhao = new ArrayList<>();
+        int soSachGiaoKhoa, soSachThamKhao;
+        double tongTienSachGiaoKhoa = 0, tongTienSachThamKhao = 0, tongDonGiaSachThamKhao = 0, 
+            trungBinhCongDonGia = 0;
+        Scanner scanner = new Scanner(System.in);
+         
+        System.out.print("Nhập số sách giáo khoa: ");
+        soSachGiaoKhoa = scanner.nextInt();
+        System.out.print("Nhập số sách tham khảo: ");
+        soSachThamKhao = scanner.nextInt();
+         
+        System.out.println("Nhập thông tin sách giáo khoa:");
+        for (int i = 0; i < soSachGiaoKhoa; i++) {
+            System.out.println("Nhập thông tin quyển sách thứ " + (i + 1) + ":");
+            SachGiaoKhoa sachGiaoKhoa = new SachGiaoKhoa();
+            sachGiaoKhoa.nhapSach();
+            arrSachGiaoKhoa.add(sachGiaoKhoa);
+        }
+         
+        System.out.println("Nhập thông tin sách tham khảo:");
+        for (int i = 0; i < soSachThamKhao; i++) {
+            System.out.println("Nhập thông tin quyển sách thứ " + (i + 1) + ":");
+            SachThamKhao sachThamKhao = new SachThamKhao();
+            sachThamKhao.nhapSach();
+            arrSachThamKhao.add(sachThamKhao);
+        }
+         
+        for (int i = 0; i < arrSachGiaoKhoa.size(); i++) {
+            if (arrSachGiaoKhoa.get(i).getNumber() == 0) {
+                tongTienSachGiaoKhoa += arrSachGiaoKhoa.get(i).getSoLuong() * 
+                    arrSachGiaoKhoa.get(i).getDonGia() * 50 / 100;
+            } else if (arrSachGiaoKhoa.get(i).getNumber() == 1) {
+                tongTienSachGiaoKhoa += arrSachGiaoKhoa.get(i).getSoLuong() * 
+                    arrSachGiaoKhoa.get(i).getDonGia();
+            }
+        }
+        System.out.println("Tổng tiền sách giáo khoa = " + tongTienSachGiaoKhoa);
+         
+        for (int i = 0; i < arrSachThamKhao.size(); i++) {
+            tongTienSachThamKhao += arrSachThamKhao.get(i).getSoLuong() * 
+                arrSachThamKhao.get(i).getDonGia() + arrSachThamKhao.get(i).getThue();
+        }
+        System.out.println("Tổng tiền sách tham khảo = " + tongTienSachThamKhao);
+         
+        System.out.println("-----Thông tin sách giáo khoa-----");
+        for (int i = 0; i < arrSachGiaoKhoa.size(); i++) {
+            System.out.println(arrSachGiaoKhoa.get(i).toString());
+        }
+         
+        System.out.println("-----Thông tin sách tham khảo-----");
+        for (int i = 0; i < arrSachThamKhao.size(); i++) {
+            System.out.println(arrSachThamKhao.get(i).toString());
+        }
+         
+        System.out.println("---Trung bình cộng đơn giá các sách tham khảo---");
+        for (int i = 0; i < arrSachThamKhao.size(); i++) {
+            tongDonGiaSachThamKhao += arrSachThamKhao.get(i).getDonGia();
+            trungBinhCongDonGia = tongDonGiaSachThamKhao / arrSachThamKhao.size();
+        }
+        System.out.println("Trung bình cộng đơn giá các sách tham khảo = " + trungBinhCongDonGia);
+         
+        System.out.println("---Các sách giáo khoa của nhà xuất bản X---");
+        for (int i = 0; i < arrSachGiaoKhoa.size(); i++) {
+            if (arrSachGiaoKhoa.get(i).getNhaXuatBan().equalsIgnoreCase("X")) {
+                System.out.println(arrSachGiaoKhoa.get(i).toString());
+            }
+        }
     }
+ 
 }
-
