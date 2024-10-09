@@ -3,17 +3,17 @@ package tuan5.baiVang;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransactionManagement {
-    private List<Transaction> transactionList;
+public class QLGD {
+    private List<GiaoDich> transactionList;
 
-    public TransactionManagement() {
+    public QLGD() {
         transactionList = new ArrayList<>();
     }
 
     // Thêm giao dịch vào danh sách
-    public void addTransaction(Transaction transaction) {
+    public void addTransaction(GiaoDich transaction) {
         // Kiểm tra trùng mã giao dịch
-        for (Transaction t : transactionList) {
+        for (GiaoDich t : transactionList) {
             if (t.getTransactionCode().equalsIgnoreCase(transaction.getTransactionCode())) {
                 throw new IllegalArgumentException("Mã giao dịch đã tồn tại.");
             }
@@ -27,7 +27,7 @@ public class TransactionManagement {
             System.out.println("Danh sách giao dịch trống.");
             return;
         }
-        for (Transaction t : transactionList) {
+        for (GiaoDich t : transactionList) {
             System.out.println(t);
             System.out.println("---------------------------");
         }
@@ -38,10 +38,10 @@ public class TransactionManagement {
         int totalGoldQuantity = 0;
         int totalCurrencyQuantity = 0;
 
-        for (Transaction t : transactionList) {
-            if (t instanceof GoldTransaction) {
+        for (GiaoDich t : transactionList) {
+            if (t instanceof GiaoDichVang) {
                 totalGoldQuantity += t.getQuantity();
-            } else if (t instanceof CurrencyTransaction) {
+            } else if (t instanceof GiaoDichTienTe) {
                 totalCurrencyQuantity += t.getQuantity();
             }
         }
@@ -55,8 +55,8 @@ public class TransactionManagement {
         double totalAmount = 0;
         int count = 0;
 
-        for (Transaction t : transactionList) {
-            if (t instanceof CurrencyTransaction) {
+        for (GiaoDich t : transactionList) {
+            if (t instanceof GiaoDichTienTe) {
                 totalAmount += t.calculateTotalAmount();
                 count++;
             }
@@ -74,7 +74,7 @@ public class TransactionManagement {
     // Xuất các giao dịch có đơn giá > 1 tỷ
     public void displayTransactionsWithUnitPriceOverOneBillion() {
         boolean found = false;
-        for (Transaction t : transactionList) {
+        for (GiaoDich t : transactionList) {
             if (t.getUnitPrice() > 1_000_000_000) {
                 System.out.println(t);
                 System.out.println("---------------------------");

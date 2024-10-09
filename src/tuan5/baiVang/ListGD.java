@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Main {
-    private static TransactionManagement transactionManagement = new TransactionManagement();
+public class ListGD {
+    private static QLGD transactionManagement = new QLGD();
     private static Scanner scanner = new Scanner(System.in);
     private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -78,7 +78,7 @@ public class Main {
             int quantity = inputQuantity();
             String goldType = inputGoldType();
 
-            GoldTransaction goldTransaction = new GoldTransaction(transactionCode, transactionDate, unitPrice, quantity, goldType);
+            GiaoDichVang goldTransaction = new GiaoDichVang(transactionCode, transactionDate, unitPrice, quantity, goldType);
             transactionManagement.addTransaction(goldTransaction);
             System.out.println("Thêm giao dịch vàng thành công.");
         } catch (IllegalArgumentException e) {
@@ -96,7 +96,7 @@ public class Main {
             double exchangeRate = inputExchangeRate();
             String currencyType = inputCurrencyType();
 
-            CurrencyTransaction currencyTransaction = new CurrencyTransaction(transactionCode, transactionDate, unitPrice, quantity, exchangeRate, currencyType);
+            GiaoDichTienTe currencyTransaction = new GiaoDichTienTe(transactionCode, transactionDate, unitPrice, quantity, exchangeRate, currencyType);
             transactionManagement.addTransaction(currencyTransaction);
             System.out.println("Thêm giao dịch tiền tệ thành công.");
         } catch (IllegalArgumentException e) {

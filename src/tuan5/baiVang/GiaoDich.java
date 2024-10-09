@@ -3,13 +3,13 @@ package tuan5.baiVang;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public abstract class Transaction {
+public abstract class GiaoDich {
     private String transactionCode;
     private LocalDate transactionDate;
     private double unitPrice;
     private int quantity;
 
-    public Transaction(String transactionCode, LocalDate transactionDate, double unitPrice, int quantity) {
+    public GiaoDich(String transactionCode, LocalDate transactionDate, double unitPrice, int quantity) {
         if (transactionCode == null || transactionCode.trim().isEmpty()) {
             throw new IllegalArgumentException("Mã giao dịch không được để trống.");
         }
@@ -82,7 +82,7 @@ public abstract class Transaction {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Transaction that = (Transaction) o;
+        GiaoDich that = (GiaoDich) o;
 
         return Objects.equals(transactionCode, that.transactionCode);
     }

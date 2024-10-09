@@ -1,9 +1,12 @@
 package tuan5.baiVang;
-public class CurrencyTransaction extends Transaction {
+
+import java.time.LocalDate;
+
+public class GiaoDichTienTe extends GiaoDich {
     private double exchangeRate;
     private String currencyType; // Tiền Việt Nam, Tiền USD, Tiền Euro
 
-    public CurrencyTransaction(String transactionCode, LocalDate transactionDate, double unitPrice, int quantity,
+    public GiaoDichTienTe(String transactionCode, LocalDate transactionDate, double unitPrice, int quantity,
                                double exchangeRate, String currencyType) {
         super(transactionCode, transactionDate, unitPrice, quantity);
         if (exchangeRate <= 0) {

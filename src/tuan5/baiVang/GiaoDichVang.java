@@ -1,9 +1,11 @@
 package tuan5.baiVang;
 
-public class GoldTransaction extends Transaction {
+import java.time.LocalDate;
+
+public class GiaoDichVang extends GiaoDich {
     private String goldType;
 
-    public GoldTransaction(String transactionCode, LocalDate transactionDate, double unitPrice, int quantity, String goldType) {
+    public GiaoDichVang(String transactionCode, LocalDate transactionDate, double unitPrice, int quantity, String goldType) {
         super(transactionCode, transactionDate, unitPrice, quantity);
         if (goldType == null || goldType.trim().isEmpty()) {
             throw new IllegalArgumentException("Loại vàng không được để trống.");
