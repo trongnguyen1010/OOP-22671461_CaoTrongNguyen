@@ -2,7 +2,7 @@ package tuan7.baiHangHoa;
 
 import java.util.ArrayList;
 
-public class QuanLyHangHoa {
+public class QuanLyHangHoa implements Methods{
     private ArrayList<HangHoa> danhSachHangHoa;
 
     public QuanLyHangHoa() {
@@ -10,7 +10,7 @@ public class QuanLyHangHoa {
     }
 
     // Kiểm tra xem mã hàng đã tồn tại chưa
-    private boolean maHangTonTai(String maHang) {
+    public boolean maHangTonTai(String maHang) {
         for (HangHoa HangHoa : danhSachHangHoa) {
             if (HangHoa.getMaHang().equalsIgnoreCase(maHang)) {
                 return true;
@@ -61,6 +61,41 @@ public class QuanLyHangHoa {
         }
     }
 
-    // Các phương thức khác như tìm kiếm, xóa, cập nhật có thể được thêm ở đây
+
+	@Override
+	public HangHoa timKiemHangHoa(String maHang) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void xoa(HangHoa hangHoa) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sua(HangHoa hangHoa) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void sortHangHoa() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setDSHangHoa(ArrayList<HangHoa> dsHangHoa) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public ArrayList<HangHoa> getDSHangHoa() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
 
