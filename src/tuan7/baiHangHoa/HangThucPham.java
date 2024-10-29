@@ -24,6 +24,8 @@ public class HangThucPham extends HangHoa {
         this.ngayHetHan = ngayHetHan;
         this.nhaCungCap = nhaCungCap;
     }
+    
+    
 
     public LocalDate getNgaySanXuat() {
         return ngaySanXuat;
